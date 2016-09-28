@@ -37,7 +37,7 @@ def create_user():
             add_contents = csv.DictWriter(open_file, fieldnames = fieldnames)
 
             add_contents.writerow({"Username": "{}".format(user_name),"Password": "{}".format(password),
-                             "Full Name": "{}".format(full_name), "Fact": "{}".format(fact)})
+                                   "Full Name": "{}".format(full_name), "Fact": "{}".format(fact)})
 
 def logout():
     if choice == "l":
