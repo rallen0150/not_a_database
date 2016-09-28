@@ -46,9 +46,10 @@ def user_choice():
 
     if choice == "u":
         user_name = input("Enter the username you wish to update information:\n>")
-        with open("info_hard.csv", "a") as open_file:
-            fieldnames = ["Username", "Password", "Full Name", "Fact"]
-            new_contents = csv.DictWriter(open_file, fieldnames = fieldnames)
+        with open("info_hard.csv" ,"r+") as open_file:
+            # fieldnames = ["Username", "Password", "Full Name", "Fact"]
+            contents = csv.reader(open_file)
+            new_contents = csv.writer(open_file)
             for row in new_contents:
                 username_place = row['Username']
                 new_choice = input("Would you like to update your (p)assword or your (f)act").lower()
