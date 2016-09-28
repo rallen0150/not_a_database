@@ -7,6 +7,7 @@ open_file.close
 def login():
     with open("info.csv") as open_file:
         contents = list(csv.DictReader(open_file))
+
     done = False
     while done == False:
         user_name = input("Enter your username: \n>")
@@ -18,7 +19,6 @@ def login():
                     print("Welcome Back {}".format(row['Full Name']))
                     done = True
             else:
-                print("Invalid Login. Try Again!")
                 continue
 
 
@@ -29,7 +29,7 @@ def user_choice():
             contents = csv.DictReader(open_file)
             for row in contents:
                 username_place = row['Username']
-                if user_name == username_place:
+                while user_name == username_place:
                     user_name = input("Username already Exists. Try another Username.\n>")
 
         password = input("What is your password?\n>")
