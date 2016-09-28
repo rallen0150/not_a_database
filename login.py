@@ -1,9 +1,5 @@
 import csv
 
-open_file = open("info.csv")
-info = open_file.readlines()
-open_file.close
-
 def login():
     with open("info.csv") as open_file:
         contents = list(csv.DictReader(open_file))
