@@ -49,7 +49,10 @@ def logout():
         print("You have succesfully logged out!")
 
 
+choice = ""
+
 login()
-choice = input("Would you like to (c)reate a new user? Or (l)og out?\n>").lower()
-create_user()
-logout()
+while choice != "l":
+    choice = input("Would you like to (c)reate a new user? Or (l)og out?\n>").lower()
+    create_user()
+    logout()
