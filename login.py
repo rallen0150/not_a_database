@@ -22,7 +22,7 @@ def login():
                 continue
 
 
-def user_choice():
+def create_user():
     if choice == "c":
         user_name= input("Enter a new username:\n>")
         with open("info.csv") as open_file:
@@ -43,10 +43,13 @@ def user_choice():
 
             add_contents.writerow({"Username": "{}".format(user_name),"Password": "{}".format(password),
                              "Full Name": "{}".format(full_name), "Fact": "{}".format(fact)})
-    else:
+
+def logout():
+    if choice == "l":
         print("You have succesfully logged out!")
 
 
 login()
 choice = input("Would you like to (c)reate a new user? Or (l)og out?\n>").lower()
-user_choice()
+create_user()
+logout()
