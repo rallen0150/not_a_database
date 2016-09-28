@@ -33,7 +33,6 @@ def create_user():
         fact = input("What is a fun fact about you?\n>")
 
         with open("info.csv", "a") as open_file:
-
             fieldnames= ["Username", "Password", "Full Name", "Fact"]
             add_contents = csv.DictWriter(open_file, fieldnames = fieldnames)
 
